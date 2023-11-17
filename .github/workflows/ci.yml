@@ -27,10 +27,10 @@ jobs:
 
       - name: Run markdown lint
         run: |
-          npm install remark-cli remark-preset-lint-consistent vfile-reporter-json
-          npx remark . --use remark-preset-lint-consistent --frail --report-useless --report vfile-reporter-json > remark-lint-report.json
+          npm install remark-cli remark-preset-lint-consistent vfile-reporter-pretty
+          npx remark . --use remark-preset-lint-consistent --frail --report vfile-reporter-pretty > remark-lint-report.txt
 
       - uses: actions/upload-artifact@v3
         with:
           name: remark-lint-report
-          path: remark-lint-report.json
+          path: remark-lint-report.txt
